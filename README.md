@@ -2,7 +2,7 @@
 vue init webpack vue-cli-multipage
 
 #### 最终效果
-![Image text](http://github.com/mejustme/vue-cli-multipage/raw/master/static/result.png)
+![图片](https://raw.githubusercontent.com/mejustme/vue-cli-multipage/master/static/result.png)
 
 #### 多入口打包
 ```
