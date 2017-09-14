@@ -1,8 +1,8 @@
 ### vue-cli-多页面
 vue init webpack vue-cli-multipage
 
-####最终效果
-![Alt text](./1505390413253.png)
+#### 最终效果
+![Alt text](//pt-starimg.didistatic.com/static/starimg/img/1505396621512L1W0ooE11HriSPhbJrr.png)
 
 #### 多入口打包
 ```
