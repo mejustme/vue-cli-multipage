@@ -17,7 +17,7 @@ module.exports = merge(baseWebpackConfig, {
   devtool: config.build.productionSourceMap ? '#source-map' : false,
   output: {
     path: config.build.assetsRoot,
-    filename: utils.assetsPath('[name].js'),
+    filename: utils.assetsPath('[name].js'), // [name] 即入口的key
     chunkFilename: utils.assetsPath('[id].js')
   },
   vue: {

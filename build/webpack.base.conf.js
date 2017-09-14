@@ -5,8 +5,6 @@ var merge = require('webpack-merge')
 var utils = require('./utils')
 var projectRoot = path.resolve(__dirname, '../') ///——driname当前目录
 var chunks = Object.keys(utils.getEntry(['./src/**/page.js']));
-// 将样式提取到单独的css文件中，而不是打包到js文件或使用style标签插入在head标签中
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
 module.exports = {
   entry: utils.getEntry(['./src/**/page.js']),
   output: {
