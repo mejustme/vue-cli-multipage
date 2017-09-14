@@ -34,10 +34,7 @@ module.exports = merge(baseWebpackConfig, {
 
 var pages = utils.getEntry(['./src/**/.html', './src/**/*.html']);
 
-
 for (var pathname in pages) {
-
-
   // 配置生成的html文件，定义路径等
   var conf = {
     filename: pathname + '.html',
@@ -46,12 +43,8 @@ for (var pathname in pages) {
     inject: true // js插入位置
 
   };
-
-
-  if (pathname in module.exports.entry) {
-    conf.chunks = ['vendors', pathname];
-    conf.hash = true;
-  }
+  // 灰常重要，一个页面html 只输出特定的打包结果
+  conf.chunks = ['vendor','manifest', pathname];
 
   module.exports.plugins.push(new HtmlWebpackPlugin(conf));
 }
