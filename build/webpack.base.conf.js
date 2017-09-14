@@ -74,13 +74,7 @@ module.exports = {
   plugins: [
     // new webpack.optimize.CommonsChunkPlugin('static/build.js'),
     // 提取公共模块
-    new webpack.optimize.CommonsChunkPlugin({
-      name: 'vendors', // 公共模块的名称
-      chunks: chunks, // chunks是需要提取的模块
-      minChunks: chunks.length
-    }),
     // 配置提取出的样式文件
-    new ExtractTextPlugin('css/[name].css'),
     new webpack.ProvidePlugin({
       $: "jquery",
       jQuery: "jquery"

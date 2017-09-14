@@ -32,7 +32,7 @@ module.exports = merge(baseWebpackConfig, {
   ]
 })
 
-var pages = utils.getEntry(['./src/**/page.html']);
+var pages = utils.getEntry(['./src/**/.html', './src/**/*.html']);
 
 
 for (var pathname in pages) {
