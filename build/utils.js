@@ -61,13 +61,10 @@ exports.styleLoaders = function(options) {
 }
 
 exports.getEntry = function(globPaths) {
-  var entries = {},
-    basename, tmp, pathname;
+  var entries = {}, pathname;
   for (globPath of globPaths) {
     glob.sync(globPath).forEach(function(entry) {
-      basename = path.basename(entry, path.extname(entry));
-      tmp = entry.split('/').splice(-3);
-      pathname = tmp.splice(0, 1) + '/' + basename; // 正确输出js和html的路径
+      pathname = entry.match(/\.\/src\/(.+)\.(html|js)/)[1];
       entries[pathname] = entry;
     });
   }

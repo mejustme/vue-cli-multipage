@@ -4,11 +4,11 @@ var webpack = require('webpack')
 var merge = require('webpack-merge')
 var utils = require('./utils')
 var projectRoot = path.resolve(__dirname, '../') ///——driname当前目录
-var chunks = Object.keys(utils.getEntry(['./src/module/**/*.js', './src/m/**/*.js']));
+var chunks = Object.keys(utils.getEntry(['./src/**/page.js']));
 // 将样式提取到单独的css文件中，而不是打包到js文件或使用style标签插入在head标签中
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 module.exports = {
-  entry: utils.getEntry(['./src/module/**/*.js', './src/m/**/*.js']),
+  entry: utils.getEntry(['./src/**/page.js']),
   output: {
     path: config.build.assetsRoot,
     publicPath: process.env.NODE_ENV === 'production' ? config.build.assetsPublicPath : config.dev.assetsPublicPath, //根名称可配置
@@ -18,10 +18,8 @@ module.exports = {
     extensions: ['', '.js', '.vue'],
     fallback: [path.join(__dirname, '../node_modules')],
     alias: {
-      'src': path.resolve(__dirname, '../src'),
-      'assets': path.resolve(__dirname, '../src/assets'),
-      'components': path.resolve(__dirname, '../src/components'),
-      'jquery': 'jquery'
+      'vue$': 'vue/dist/vue.esm.js',
+      '@': resolve('src')
     }
   },
   resolveLoader: {
